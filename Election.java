@@ -1,3 +1,4 @@
+//cade
 import java.util.NoSuchElementException;
 public class Election {
 	private Candidate[] candidates;
