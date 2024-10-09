@@ -13,7 +13,16 @@ public class Ballot {
 	 * @throws IllegalStateException - if you attempt to create a Ballot when there are no elections to vote in yet
 	 */
 	public Ballot() {
-		
+		int count = 0;
+		for(int i = 0; i < elections.size(); i++) {
+			if(elections.get(i) != null) {
+				count++;
+			}
+		}
+		if(count <= 0) {
+			throw new IllegalStateException("No elections to vote in");
+		}
+		ballotsCreated = true;
 	}
 	
 	/**
@@ -24,7 +33,17 @@ public class Ballot {
 	 * @throws IllegalArgumentException - if the election is already present in the list
 	 */
 	static void addElection(Election election) {
-		
+		for(int i = 0; i < elections.size(); i++) {
+			if(elections.get(i).equals(null)){
+				continue;
+			}else if(elections.get(i).SEAT_NAME.equals(election)) {
+				throw new IllegalArgumentException("Election already present");
+			}
+		}
+		if(ballotsCreated = true) {
+			throw new IllegalStateException("Cannot alter ballots, one or more have already been made");
+		}
+		elections.add(election);
 	}
 	
 	/**

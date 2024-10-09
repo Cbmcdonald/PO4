@@ -53,12 +53,12 @@ public class Election {
 	 * @throws - IllegalArgumentException - if this candidate is already present in the candidates list for this election
 	 */
 	public void addCandidate(Candidate candidate) {
-		for (int i = 0; i < candidates.length; ++i) {
-			if(candidates[i].equals(null)) {
+		for (int i = 0; i < this.numCandidates; ++i) {
+			if(this.candidates[i].equals(null)) {
 				i++;
 				continue;
 			}
-			else if (candidates[i].equals(candidate)) {
+			else if (this.candidates[i].equals(candidate)) {
 				throw new IllegalArgumentException("Candidate is already added");
 			}
 		}
