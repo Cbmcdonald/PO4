@@ -1,5 +1,3 @@
-//Need to try
-
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
@@ -63,5 +61,5 @@ public class Ballot {
 	public String toString() {
 		
 	}
-	//Test string
+
 }
