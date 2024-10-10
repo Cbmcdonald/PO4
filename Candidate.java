@@ -1,15 +1,18 @@
+
 /**
-	 * An instantiable class representing a candidate in an election. For use in the Exceptional Election project in CS300
-	 */
+ * An instantiable class representing a candidate in an election. For use in the
+ * Exceptional Election project in CS300
+ */
 public class Candidate {
 	private String name;
 	private String party;
 	private int numVotes;
 
 	/**
-	 * Creates a new Candidate object with the given name and party. This candidate has received 0 votes.
+	 * Creates a new Candidate object with the given name and party. This candidate
+	 * has received 0 votes.
 	 * 
-	 * @param name - the candidate's name, cannot be null or blank
+	 * @param name  - the candidate's name, cannot be null or blank
 	 * @param party - the candidate's party, cannot be null or blank
 	 */
 	public Candidate(String name, String party) {
@@ -33,7 +36,7 @@ public class Candidate {
 	public int getNumVotes() {
 		return this.numVotes;
 	}
-	
+
 	/**
 	 * Adds one (1) vote to this candidate's total
 	 */
@@ -42,12 +45,13 @@ public class Candidate {
 	}
 
 	/**
-	 * Creates and returns a String representation of this candidate 
-	 * in the form "name (party): numVotes". For example, Wooper from the Water party who 
+	 * Creates and returns a String representation of this candidate in the form
+	 * "name (party): numVotes". For example, Wooper from the Water party who
 	 * received 5 votes would produce "Wooper (Water): 5"
 	 * 
 	 * @overrides toString in class Object
-	 * @return - a String representation of the candidate as described in this comment, which does NOT end with a newline
+	 * @return - a String representation of the candidate as described in this
+	 *         comment, which does NOT end with a newline
 	 */
 	public String toString() {
 		String name = this.name;
@@ -56,15 +60,18 @@ public class Candidate {
 		String toString = name + " (" + party + "): " + numVotes;
 		return toString;
 	}
-	
+
 	/**
-	 * Determines whether this candidate and anObject are copies (deep or shallow) of each other. If anObject is not a 
-	 * Candidate object at all, they are not equal. If it IS a Candidate, then they are equal if and only if this candidate
-	 *  and anObject have exactly the same name, party, and number of votes.
-	 *  
-	 *  @overrides - equals in class Object
-	 *  @param anObject - the object to compare this Candidate against
-	 *  @return - true if the given object represents a Candidate equivalent to this candidate, false otherwise.
+	 * Determines whether this candidate and anObject are copies (deep or shallow)
+	 * of each other. If anObject is not a Candidate object at all, they are not
+	 * equal. If it IS a Candidate, then they are equal if and only if this
+	 * candidate and anObject have exactly the same name, party, and number of
+	 * votes.
+	 * 
+	 * @overrides - equals in class Object
+	 * @param anObject - the object to compare this Candidate against
+	 * @return - true if the given object represents a Candidate equivalent to this
+	 *         candidate, false otherwise.
 	 */
 	public boolean equals(Object anObject) {
 		if (anObject instanceof Candidate) {
