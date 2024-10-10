@@ -1,3 +1,29 @@
+//////////////// FILE HEADER (INCLUDE IN EVERY FILE) //////////////////////////
+//
+// Title:    Ballot object constructor and manager
+// Course:   CS 300 Fall 2024
+// Author:   Cade McDonald
+// Email:    Cbmcdonald2@wisc.edu
+// Lecturer: Blerina Gkotse
+//
+//////////////////// PAIR PROGRAMMERS COMPLETE THIS SECTION ///////////////////
+// 
+// Partner Name:    Nicholas Melnyk
+// Partner Email:   nmelnyk@wisc.edu
+// Partner Lecturer's Name: Hobbes LeGault
+// 
+// VERIFY THE FOLLOWING BY PLACING AN X NEXT TO EACH TRUE STATEMENT:
+//   _x_ Write-up states that pair programming is allowed for this assignment.
+//   _x_ We have both read and understand the course Pair Programming Policy.
+//   _x_ We have registered our team prior to the team registration deadline.
+//
+//////////////////////// ASSISTANCE/HELP CITATIONS ////////////////////////////
+//
+// Persons:         TA during drop in hours on 10-9-2024, helped debug code
+// Online Sources:  https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html
+//					General coding suggestions especially for comparing objects and such.
+//
+///////////////////////////////////////////////////////////////////////////////
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
@@ -120,10 +146,10 @@ public class Ballot {
 	 * follows: in order, lists the seatName of the election from the elections
 	 * ArrayList and whether this Ballot has yet cast a vote in that election.
 	 *
-	 * @overrides toString in class Object
 	 * @return - a string representation of this ballot as described in this
 	 *         comment, which does NOT end with a newline
 	 */
+	@Override
 	public String toString() {
 		String finalAnswer = "";
 		for (int i = 0; i < elections.size(); i++) {

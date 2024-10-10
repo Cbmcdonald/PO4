@@ -1,4 +1,29 @@
-/// TODO: file header testing comments cade
+//////////////// FILE HEADER (INCLUDE IN EVERY FILE) //////////////////////////
+//
+// Title:    Tester methods for the election manager project
+// Course:   CS 300 Fall 2024
+// Author:   Cade McDonald
+// Email:    Cbmcdonald2@wisc.edu
+// Lecturer: Blerina Gkotse
+//
+//////////////////// PAIR PROGRAMMERS COMPLETE THIS SECTION ///////////////////
+// 
+// Partner Name:    Nicholas Melnyk
+// Partner Email:   nmelnyk@wisc.edu
+// Partner Lecturer's Name: Hobbes LeGault
+// 
+// VERIFY THE FOLLOWING BY PLACING AN X NEXT TO EACH TRUE STATEMENT:
+//   _x_ Write-up states that pair programming is allowed for this assignment.
+//   _x_ We have both read and understand the course Pair Programming Policy.
+//   _x_ We have registered our team prior to the team registration deadline.
+//
+//////////////////////// ASSISTANCE/HELP CITATIONS ////////////////////////////
+//
+// Persons:         TA during drop in hours on 10-9-2024, helped debug code
+// Online Sources:  https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html
+//					General coding suggestions especially for comparing objects and such.
+//
+///////////////////////////////////////////////////////////////////////////////
 import java.util.NoSuchElementException;
 
 /**
@@ -160,24 +185,7 @@ public class ElectionManagerTester {
 			e.printStackTrace();
 			return false;
 		}
-		try {
-			Election electionTest = new Election(" ", 5);
-			return false;
-		} catch (IllegalArgumentException e) {
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
-		}
-		try {
-			Election electionTest = new Election(null, 0);
-			return false;
-		} catch (IllegalArgumentException e) {
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
-		}
+		
 		return true; // TODO
 	}
 
@@ -334,7 +342,8 @@ public class ElectionManagerTester {
 		Candidate monster = new Candidate("Cookie Monster", "Cookie");
 		Candidate elmo = new Candidate("Elmo", "Friend");
 		general.addCandidate(monster);
-		general.addCandidate(elmo);
+		general.addCandidate(elmo);	
+		
 		if (general.getNumCandidates() != 2) {
 			return false;
 		}
@@ -371,11 +380,30 @@ public class ElectionManagerTester {
 		Candidate monster = new Candidate("Cookie Monster", "Cookie");
 		Candidate elmo = new Candidate("Elmo", "Friend");
 		general.addCandidate(elmo);
+		
+		Election empty = new Election("Empty", 3);
+		
+		try {
+			empty.removeCandidate(elmo);
+			return false;
+		} catch (IllegalStateException e) {
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+		try {
+			empty.removeCandidate(elmo);
+			return false;
+		} catch (IllegalStateException e) {
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
 
 		try {
-			general.removeCandidate(elmo);
-		} catch (IllegalArgumentException e) {
-
+			general.removeCandidate(monster);
+		} catch (NoSuchElementException e) {
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;

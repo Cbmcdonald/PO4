@@ -1,9 +1,35 @@
+//////////////// FILE HEADER (INCLUDE IN EVERY FILE) //////////////////////////
+//
+// Title:    Election object constructor and manager
+// Course:   CS 300 Fall 2024
+// Author:   Cade McDonald
+// Email:    Cbmcdonald2@wisc.edu
+// Lecturer: Blerina Gkotse
+//
+//////////////////// PAIR PROGRAMMERS COMPLETE THIS SECTION ///////////////////
+// 
+// Partner Name:    Nicholas Melnyk
+// Partner Email:   nmelnyk@wisc.edu
+// Partner Lecturer's Name: Hobbes LeGault
+// 
+// VERIFY THE FOLLOWING BY PLACING AN X NEXT TO EACH TRUE STATEMENT:
+//   _x_ Write-up states that pair programming is allowed for this assignment.
+//   _x_ We have both read and understand the course Pair Programming Policy.
+//   _x_ We have registered our team prior to the team registration deadline.
+//
+//////////////////////// ASSISTANCE/HELP CITATIONS ////////////////////////////
+//
+// Persons:         TA during drop in hours on 10-9-2024, helped debug code
+// Online Sources:  https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html
+//					General coding suggestions especially for comparing objects and such.
+//
+///////////////////////////////////////////////////////////////////////////////
 import java.util.NoSuchElementException;
 
 public class Election {
 	private Candidate[] candidates;
 	private int numCandidates;
-	final String SEAT_NAME;
+	public final String SEAT_NAME;
 
 	/**
 	 * Initializes the oversize array for this election's candidates and sets the
@@ -166,10 +192,10 @@ public class Election {
 	 * each Candidate's string representation on a separate line. The first line of
 	 * the output String contains the name of the seat this election is for.
 	 * 
-	 * @Overrides - toString in class Object
 	 * @return - the String representation of the current state of this Election,
 	 *         which does NOT end with a newline
 	 */
+	@Override
 	public String toString() {
 		String finalAnswer = this.SEAT_NAME + "\n";
 		for (int i = 0; i < this.numCandidates; i++) {
@@ -188,11 +214,11 @@ public class Election {
 	 * they are equivalent if and only if their seat names match, ignoring
 	 * capitalization.
 	 * 
-	 * @Overrides - equals in class Object
 	 * @param anObject - the object to compare this Election against
 	 * @return - true if the given object represents a Election equivalent to this
 	 *         election, false otherwise.
 	 */
+	@Override
 	public boolean equals(Object anObject) {
 		if (anObject instanceof Election) {
 			Election otherElection = (Election) anObject;
